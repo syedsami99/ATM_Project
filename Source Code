@@ -1,0 +1,51 @@
+import sys
+
+#welcome screen 
+print ("Welcome to SBI \nEnter Your Card")
+pin = int(input("Please Enter Your pin \n"))
+if pin == 1024:
+    print ("Select the Banking Option")
+else:
+    print("Incorrect Pin")
+    sys.exit(0)
+
+
+banking = int(input("1.withdraw 2.deposit \n"))
+
+#withdraw section
+if banking == 1:
+    withdraw = int(input("Enter the amount \n"))
+    if withdraw < 500:
+        print("Inappropriate Amount")
+    elif withdraw > 2000:
+        print("Daily Limit Exceeds")
+    elif withdraw == 500 or withdraw == 1000 or withdraw == 1500 or withdraw == 2000:
+        print("Please Wait Your Transaction Is Being Processed")
+    else:
+        print("Select appropriate amount")
+
+#confirmation of withdrawn
+    if withdraw == 500 or withdraw == 1000 or withdraw == 1500 or withdraw == 2000:
+        print("Please Collect Your Cash \nThank  You For Using SBI")
+        sys.exit(0)
+    else:
+        print("Last Transaction Cancelled")
+        sys.exit(0)
+
+
+#deposit section
+elif banking == 2:
+    deposit = int(input("select the amount to deposit"))
+    if deposit == 100 or deposit == 200 or deposit == 500 or  deposit == 2000:
+        print("Enter your Cash \nThank  You For Using SBI")
+    else:
+        print("select appropriate amount")
+#confirmation of deposit
+    if deposit == 100 or deposit == 200 or deposit == 500 or  deposit == 2000:
+        print("Thank  You For Using SBI")
+        sys.exit(0)
+    else:
+        print("Last Transaction Cancelled")
+
+else:
+    print("select appropriate option")
